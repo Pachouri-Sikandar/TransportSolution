@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.pachouri.transportsolution.R;
 import com.pachouri.transportsolution.activity.HomeActivity;
+import com.pachouri.transportsolution.activity.SplashActivity;
 import com.pachouri.transportsolution.adapter.ReceiversGridAdapter;
 import com.pachouri.transportsolution.interfaces.FragmentCommunicator;
 import com.pachouri.transportsolution.models.ReceiverDetailsModel;
@@ -41,6 +42,7 @@ public class ReceiverFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.layout_receiver_fragment, container, false);
         ButterKnife.bind(this, view);
+        setAdapter();
         return view;
     }
 
@@ -57,11 +59,16 @@ public class ReceiverFragment extends Fragment {
     }
 
     private void setAdapter() {
+        receiverDetailsList = SplashActivity.getReceivers();
         if (attachContext != null) {
-            ReceiversGridAdapter receiversGridAdapter = new ReceiversGridAdapter(attachContext, receiverDetailsList);
-            GridLayoutManager gridLayoutManager = new GridLayoutManager(attachContext, 2);
-            recyclerViewReceiver.setLayoutManager(gridLayoutManager);
-            recyclerViewReceiver.setAdapter(receiversGridAdapter);
+            if (receiverDetailsList != null) {
+                if (receiverDetailsList.size() > 0) {
+                    ReceiversGridAdapter receiversGridAdapter = new ReceiversGridAdapter(attachContext, receiverDetailsList);
+                    GridLayoutManager gridLayoutManager = new GridLayoutManager(attachContext, 2);
+                    recyclerViewReceiver.setLayoutManager(gridLayoutManager);
+                    recyclerViewReceiver.setAdapter(receiversGridAdapter);
+                }
+            }
         }
     }
 

@@ -5,12 +5,19 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.pachouri.transportsolution.R;
 import com.pachouri.transportsolution.models.ReceiverDetailsModel;
+import com.pachouri.transportsolution.util.CircularTransformation;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 /**
  * Created by ankit on 12/25/16.
@@ -18,14 +25,16 @@ import java.util.List;
 
 public class ReceiversGridAdapter extends RecyclerView.Adapter<ReceiversGridAdapter.ReceiverViewHolder> {
 
+    private static final CircularTransformation USER_ROUNDED_TRANSFORMATION = new CircularTransformation(200, 2);
+
     private List<ReceiverDetailsModel> receiverDetailsModels;
     private LayoutInflater layoutInflater;
-    private Context mContext;
+    private Context context;
 
     public ReceiversGridAdapter(Context context, List<ReceiverDetailsModel> receiverDetailsModels) {
-        this.mContext = context;
-        receiverDetailsModels = new ArrayList<>();
-        layoutInflater = LayoutInflater.from(mContext);
+        this.context = context;
+        this.receiverDetailsModels = new ArrayList<>();
+        layoutInflater = LayoutInflater.from(context);
         this.receiverDetailsModels.addAll(receiverDetailsModels);
     }
 
@@ -39,7 +48,19 @@ public class ReceiversGridAdapter extends RecyclerView.Adapter<ReceiversGridAdap
     @Override
     public void onBindViewHolder(ReceiverViewHolder viewHolder, int position) {
         if (receiverDetailsModels.size() > 0) {
-            final ReceiverDetailsModel receiverDetailsModel = receiverDetailsModels.get(position);
+            final ReceiverDetailsModel receiverModel = receiverDetailsModels.get(position);
+            if (receiverModel.getImageUrl() != null) {
+                Picasso.with(context).load(receiverModel.getImageUrl()).error(R.drawable.ic_menu_profile).
+                        transform(USER_ROUNDED_TRANSFORMATION).placeholder(R.drawable
+                        .ic_menu_profile).into(viewHolder.imageViewUser);
+            }
+            viewHolder.textViewName.setText(receiverModel.getFirstName() + " " + receiverModel.getLastName());
+            viewHolder.textViewFrom.setText(receiverModel.getPlaceFrom() + " to ");
+            viewHolder.textViewTo.setText(receiverModel.getPlaceTo());
+            viewHolder.textViewTime.setText(receiverModel.getLeavingTime());
+            viewHolder.textViewContactNumber.setText(receiverModel.getMobileNumber());
+            viewHolder.textViewCharges.setText(context.getResources().getString(R.string.txt_rs_symbol,
+                    String.valueOf(receiverModel.getDeliveryCharges()).trim()) + "Min.");
         }
     }
 
@@ -49,9 +70,24 @@ public class ReceiversGridAdapter extends RecyclerView.Adapter<ReceiversGridAdap
     }
 
     public class ReceiverViewHolder extends RecyclerView.ViewHolder {
+        @Bind(R.id.imageViewReceiver)
+        protected ImageView imageViewUser;
+        @Bind(R.id.textViewReceiverName)
+        protected TextView textViewName;
+        @Bind(R.id.textViewFrom)
+        protected TextView textViewFrom;
+        @Bind(R.id.textViewTo)
+        protected TextView textViewTo;
+        @Bind(R.id.textViewTime)
+        protected TextView textViewTime;
+        @Bind(R.id.textViewContactNumber)
+        protected TextView textViewContactNumber;
+        @Bind(R.id.textViewCharges)
+        protected TextView textViewCharges;
 
         public ReceiverViewHolder(View itemView) {
             super(itemView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

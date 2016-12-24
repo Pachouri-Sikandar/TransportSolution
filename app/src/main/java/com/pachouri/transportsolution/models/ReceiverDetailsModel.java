@@ -3,6 +3,7 @@ package com.pachouri.transportsolution.models;
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Select;
 
 import java.io.Serializable;
 
@@ -54,6 +55,16 @@ public class ReceiverDetailsModel extends Model implements Serializable {
 
     @Column(name = COLUMN_DELIVERY_CHARGES)
     private String deliveryCharges;
+
+    public static boolean isReceiverRegistered(String phoneNumber) {
+        ReceiverDetailsModel model = new Select().from(ReceiverDetailsModel.class).where
+                (COLUMN_PHONE_NUMBER + " = ?", phoneNumber).executeSingle();
+
+        if (model != null)
+            return true;
+        else
+            return false;
+    }
 
     public static String getTableName() {
         return TABLE_NAME;
