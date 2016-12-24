@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/release/drawable/abc_ic_clear_material.xml",
-        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_ic_clear_material.xml"
-    },
-    {
         "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/release/drawable/abc_ratingbar_material.xml",
         "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/release/drawable/abc_ic_clear_material.xml",
+        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_ic_clear_material.xml"
     },
     {
         "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/release/drawable/abc_textfield_search_material.xml",

@@ -20,20 +20,20 @@
         "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_action_bar_title_item.xml"
     },
     {
-        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/notification_template_lines.xml",
-        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/notification_template_lines.xml"
-    },
-    {
-        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/design_navigation_item.xml",
-        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/design/24.1.1/res/layout/design_navigation_item.xml"
+        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
         "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_search_dropdown_item_icons_2line.xml",
         "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/support_simple_spinner_dropdown_item.xml",
-        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/support_simple_spinner_dropdown_item.xml"
+        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/design_navigation_item.xml",
+        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/design/24.1.1/res/layout/design_navigation_item.xml"
+    },
+    {
+        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/notification_template_lines.xml",
+        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/notification_template_lines.xml"
     },
     {
         "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/design_navigation_item_subheader.xml",
