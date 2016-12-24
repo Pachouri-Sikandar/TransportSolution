@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png",
-        "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
-    },
-    {
         "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4/abc_ic_star_half_black_48dp.png",
         "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
         "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/drawable-xxxhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png",

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.EditText;
 import com.pachouri.transportsolution.Constants;
 import com.pachouri.transportsolution.R;
+import com.pachouri.transportsolution.models.UserLifecycleModel;
 import com.pachouri.transportsolution.models.UserModel;
 import com.pachouri.transportsolution.util.CommonUtil;
 import butterknife.Bind;
@@ -46,6 +47,8 @@ public class PersonalProfile extends AppCompatActivity {
             userModel.setEmail(editTextEmail.getText().toString());
             userModel.setMobileNumber(mobilePhone);
             userModel.save();
+
+            UserLifecycleModel.setUserCurrentState(getApplicationContext(), UserLifecycleModel.UserStatus.LoggedIn);
         }
     }
 

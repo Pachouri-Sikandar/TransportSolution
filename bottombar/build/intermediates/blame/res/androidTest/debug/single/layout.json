@@ -4,20 +4,20 @@
         "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_select_dialog_material.xml"
     },
     {
-        "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_expanded_menu_layout.xml",
-        "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_expanded_menu_layout.xml"
-    },
-    {
         "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_action_bar_title_item.xml",
         "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_action_bar_title_item.xml"
     },
     {
-        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_activity_chooser_view.xml",
-        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_activity_chooser_view.xml"
+        "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_expanded_menu_layout.xml",
+        "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_expanded_menu_layout.xml"
     },
     {
         "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/bb_bottom_bar_item_container.xml",
         "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/bundles/debug/res/layout/bb_bottom_bar_item_container.xml"
+    },
+    {
+        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_activity_chooser_view.xml",
+        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_activity_chooser_view.xml"
     },
     {
         "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_action_menu_layout.xml",
@@ -40,12 +40,12 @@
         "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_action_bar_title_item.xml",
-        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_action_bar_title_item.xml"
-    },
-    {
         "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_expanded_menu_layout.xml",
         "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_action_bar_title_item.xml",
+        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_action_bar_title_item.xml"
     },
     {
         "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/notification_template_lines.xml",
@@ -68,12 +68,12 @@
         "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_dialog_title_material.xml",
-        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_dialog_title_material.xml"
-    },
-    {
         "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/design_layout_tab_icon.xml",
         "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/design/24.1.1/res/layout/design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_dialog_title_material.xml",
+        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_dialog_title_material.xml"
     },
     {
         "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/layout/notification_template_lines.xml",
@@ -88,12 +88,12 @@
         "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/layout/notification_template_part_chronometer.xml",
-        "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/notification_template_part_chronometer.xml"
-    },
-    {
         "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_search_dropdown_item_icons_2line.xml",
         "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/layout/notification_template_part_chronometer.xml",
+        "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/notification_template_part_chronometer.xml"
     },
     {
         "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_activity_chooser_view.xml",
@@ -152,12 +152,12 @@
         "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_popup_menu_header_item_layout.xml"
     },
     {
-        "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/bb_bottom_bar_item_container_tablet.xml",
-        "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/bundles/debug/res/layout/bb_bottom_bar_item_container_tablet.xml"
-    },
-    {
         "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_search_view.xml",
         "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/bb_bottom_bar_item_container_tablet.xml",
+        "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/bundles/debug/res/layout/bb_bottom_bar_item_container_tablet.xml"
     },
     {
         "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/notification_template_big_media_narrow.xml",
@@ -228,12 +228,12 @@
         "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/bundles/debug/res/layout/bb_bottom_bar_item_container.xml"
     },
     {
-        "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/layout/select_dialog_item_material.xml",
-        "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/select_dialog_item_material.xml"
-    },
-    {
         "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/notification_template_part_time.xml",
         "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/layout/select_dialog_item_material.xml",
+        "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/select_dialog_item_material.xml"
     },
     {
         "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/layout/design_navigation_menu.xml",
@@ -244,12 +244,12 @@
         "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/bundles/debug/res/layout/bb_bottom_bar_item_container_tablet.xml"
     },
     {
-        "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_dialog_title_material.xml",
-        "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_dialog_title_material.xml"
-    },
-    {
         "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/bb_bottom_bar_item_fixed_tablet.xml",
         "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/bundles/debug/res/layout/bb_bottom_bar_item_fixed_tablet.xml"
+    },
+    {
+        "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_dialog_title_material.xml",
+        "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_dialog_title_material.xml"
     },
     {
         "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_action_bar_view_list_nav_layout.xml",
@@ -340,16 +340,16 @@
         "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/select_dialog_item_material.xml"
     },
     {
-        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/bb_bottom_bar_item_shifting.xml",
-        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/bundles/debug/res/layout/bb_bottom_bar_item_shifting.xml"
+        "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/design_layout_tab_text.xml",
+        "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/design/24.1.1/res/layout/design_layout_tab_text.xml"
     },
     {
         "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_alert_dialog_material.xml",
         "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_alert_dialog_material.xml"
     },
     {
-        "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/design_layout_tab_text.xml",
-        "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/design/24.1.1/res/layout/design_layout_tab_text.xml"
+        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/bb_bottom_bar_item_shifting.xml",
+        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/bundles/debug/res/layout/bb_bottom_bar_item_shifting.xml"
     },
     {
         "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout/abc_screen_simple_overlay_action_mode.xml",

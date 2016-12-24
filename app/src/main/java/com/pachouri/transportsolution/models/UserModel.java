@@ -1,9 +1,19 @@
 package com.pachouri.transportsolution.models;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import com.activeandroid.Model;
 import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Select;
+import com.google.gson.Gson;
+import com.pachouri.transportsolution.BaseActivity;
+import com.pachouri.transportsolution.BaseApplication;
+import com.pachouri.transportsolution.Constants;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.Serializable;
 
@@ -37,6 +47,8 @@ public class UserModel extends Model implements Serializable {
     @Column(name = COLUMN_VR)
     private String veichle;
 
+    @Column(name = "image_url")
+    private String ImageUrl;
 
     public static boolean isUserAlreadyRegistered(String phoneNumber){
         UserModel userModel = new Select().from(UserModel.class).where(COLUMN_PHONE_NUMBER+" = ?",phoneNumber).executeSingle();
@@ -46,6 +58,85 @@ public class UserModel extends Model implements Serializable {
         else
             return false;
     }
+
+    public static UserModel getUserModelFromMobile(String mobileNumber){
+        return new Select()
+                .from(UserModel.class)
+                .where(COLUMN_PHONE_NUMBER+" = ?",mobileNumber)
+                .executeSingle();
+    }
+
+    private static UserModel instance;
+
+    private static String USER_PREFERENCES_STORE = "user_preferences_store";
+
+    public static SharedPreferences getUserSharedPreferences(Context context) {
+        return context.getSharedPreferences(USER_PREFERENCES_STORE, Context.MODE_PRIVATE);
+    }
+
+
+    public static UserModel getInstance(Context context) {
+        UserModel userObject = UserModel.getInstance(context, null);
+        return userObject;
+    }
+
+    public static UserModel setUpInstance(Context context, UserModel userData) {
+        instance = null;
+        return UserModel.getInstance(context, userData);
+    }
+
+    private static UserModel getInstance(Context context, UserModel userData) {
+        long userId = 0;
+        if (instance == null) {
+            SharedPreferences preferences = getUserSharedPreferences(context);
+            String UserModel = preferences.getString(Constants.PREF_KEY_USER, "");
+            try {
+                JSONObject object = new JSONObject(UserModel);
+                userId = object.optLong("userId", 0);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            if (userId == 0 && userData == null) {
+                return new UserModel();
+            }
+
+            instance = new UserModel();
+            if (userData == null) {
+                instance.pullUserData(context);
+            } else {
+                instance.setUpUserData(context, userData);
+            }
+        }
+        return instance;
+    }
+
+    private void pullUserData(Context context) {
+        Gson gson = null;
+        try {
+            gson = ((BaseApplication) context).getGson();
+        } catch (Exception e) {
+            gson = ((BaseApplication) context.getApplicationContext()).getGson();
+        }
+        SharedPreferences preferences = getUserSharedPreferences(context);
+        instance = gson.fromJson(preferences.getString(Constants.PREF_KEY_USER, ""), UserModel.class);
+    }
+
+    private void setUpUserData(Context context, UserModel userData) {
+        Gson gson = null;
+        try {
+            gson = ((BaseApplication) context).getGson();
+        } catch (Exception e) {
+            gson = ((BaseApplication) context.getApplicationContext()).getGson();
+        }
+        String jsonString = gson.toJson(userData);
+        SharedPreferences preferences = getUserSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(Constants.PREF_KEY_USER, jsonString);
+        editor.apply();
+        pullUserData(context);
+    }
+
 
     public String getMobileNumber() {
         return mobileNumber;
@@ -85,5 +176,13 @@ public class UserModel extends Model implements Serializable {
 
     public void setVeichle(String veichle) {
         this.veichle = veichle;
+    }
+
+    public String getImageUrl() {
+        return ImageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        ImageUrl = imageUrl;
     }
 }
