@@ -1,11 +1,15 @@
 [
     {
+        "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_default.xml",
+        "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_default.xml"
+    },
+    {
         "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_btn_checkable.xml",
         "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_default.xml",
-        "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_default.xml"
+        "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_default.xml",
+        "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_default.xml"
     },
     {
         "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/release/color-v23/abc_btn_colored_borderless_text_material.xml",
@@ -16,12 +20,12 @@
         "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_default.xml"
     },
     {
-        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_switch_thumb.xml",
-        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_switch_thumb.xml"
-    },
-    {
         "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_spinner.xml",
         "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_switch_thumb.xml",
+        "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_switch_thumb.xml"
     },
     {
         "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_btn_colored_borderless_text_material.xml",
@@ -34,6 +38,10 @@
     {
         "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_btn_checkable.xml",
         "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_seek_thumb.xml",
+        "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_seek_thumb.xml"
     },
     {
         "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_default.xml",
@@ -64,6 +72,14 @@
         "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_btn_colored_borderless_text_material.xml"
     },
     {
+        "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_switch_thumb.xml",
+        "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_btn_checkable.xml",
+        "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_btn_checkable.xml"
+    },
+    {
         "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_edittext.xml",
         "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_edittext.xml"
     },
@@ -74,6 +90,10 @@
     {
         "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_seek_thumb.xml",
         "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_edittext.xml",
+        "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_edittext.xml"
     },
     {
         "merged": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_color_highlight_material.xml",
@@ -92,8 +112,24 @@
         "source": "/home/ankit/MyGitRepo/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_btn_checkable.xml"
     },
     {
+        "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_color_highlight_material.xml",
+        "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_switch_track.xml",
+        "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_switch_track.xml"
+    },
+    {
         "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_spinner.xml",
         "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_spinner.xml",
+        "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/res/merged/release/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "/home/ankit/MyGitRepo/4amNewPull/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v23/abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/release/color-v23/abc_tint_switch_thumb.xml",
