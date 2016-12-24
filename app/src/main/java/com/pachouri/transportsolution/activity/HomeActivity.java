@@ -52,7 +52,7 @@ public class HomeActivity extends BaseActivity {
         bottomBar = BottomBar.attach(this, savedInstanceState);
         bottomBar.useFixedMode();
         bottomBar.setTypeFace(BOTTOM_BAR_FONT);
-        bottomBar.setActiveTabColor(ContextCompat.getColor(this, R.color.snackBarColor));
+        bottomBar.setActiveTabColor(ContextCompat.getColor(this, R.color.colorAccent));
         bottomBar.setItemsFromMenu(R.menu.menu_bottom_bar, new OnMenuTabClickListener() {
             @Override
             public void onMenuTabSelected(@IdRes int menuItemId) {
