@@ -23,10 +23,11 @@
 
             <ImageView
                 android:id="@+id/imageViewReceiver"
-                android:layout_width="@dimen/dp_60"
-                android:layout_height="@dimen/dp_60"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_gravity="center_horizontal"
                 android:adjustViewBounds="true"
+                android:src="@drawable/ic_menu_history"
                 />
 
             <com.pachouri.transportsolution.widgets.AppTextView
@@ -36,11 +37,102 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/dp_4"
                 android:gravity="center"
-                android:maxLines="2"
-                android:padding="@dimen/dp_8"
+                android:maxLines="1"
+                android:padding="@dimen/dp_4"
+                android:text="Name"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/sp_18"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <com.pachouri.transportsolution.widgets.AppTextView
+                    android:id="@+id/textViewFrom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="FROM"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_12"/>
+
+                <com.pachouri.transportsolution.widgets.AppTextView
+                    android:id="@+id/textViewTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="TO"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_12"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                >
+
+                <com.pachouri.transportsolution.widgets.AppTextView
+                    android:id="@+id/textViewTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Time"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_12"/>
+
+                <com.pachouri.transportsolution.widgets.AppTextView
+                    android:id="@+id/textViewContactNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/ic_menu_profile"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="9623435159"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_12"/>
+
+                <com.pachouri.transportsolution.widgets.AppTextView
+                    android:id="@+id/textViewCharges"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Charges"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/sp_12"/>
+            </LinearLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>
