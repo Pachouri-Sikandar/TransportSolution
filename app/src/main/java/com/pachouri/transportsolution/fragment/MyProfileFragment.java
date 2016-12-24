@@ -10,6 +10,8 @@ import com.pachouri.transportsolution.R;
 import com.pachouri.transportsolution.activity.HomeActivity;
 import com.pachouri.transportsolution.interfaces.FragmentCommunicator;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by ankit on 12/25/16.
  */
@@ -23,12 +25,8 @@ public class MyProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.layout_my_profile_fragment, container, false);
-        initView(view);
+        ButterKnife.bind(this, view);
         return view;
-    }
-
-    private void initView(View view) {
-
     }
 
     private void setToolbarTitle() {
