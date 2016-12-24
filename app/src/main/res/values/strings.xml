@@ -10,4 +10,8 @@
     <string name="bottom_menu_my_history">My History</string>
     <string name="bottom_menu_my_profile">My Profile</string>
 
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+
 </resources>
