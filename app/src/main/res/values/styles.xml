@@ -19,4 +19,24 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
+
+    <style name="AccountKitTheme" parent="Theme.AccountKit">
+        <item name="com_accountkit_primary_color">@color/colorPrimary</item>
+        <item name="com_accountkit_primary_text_color">@android:color/black</item>
+        <item name="com_accountkit_secondary_text_color">@android:color/black</item>
+        <item name="com_accountkit_status_bar_color">@color/colorPrimaryDark</item>
+        <item name="com_accountkit_header_background_color">@color/colorPrimary</item>
+        <item name="com_accountkit_header_text_color">@color/white</item>
+        <item name="com_accountkit_button_text_color">@color/colorPrimary</item>
+        <item name="com_accountkit_background_color">@color/white</item>
+        <item name="com_accountkit_button_border_color">@color/colorPrimary</item>
+        <item name="com_accountkit_input_text_color">@android:color/black</item>
+        <item name="com_accountkit_button_background_color">#00000000</item>
+        <item name="com_accountkit_input_background_color">#eceff1</item>
+        <item name="com_accountkit_input_border_color">#d3d3d3</item>
+        <item name="com_accountkit_button_disabled_background_color">#00000000</item>
+        <item name="com_accountkit_button_disabled_border_color">@android:color/black</item>
+        <item name="com_accountkit_text_color">@android:color/black</item>
+    </style>
+
 </resources>

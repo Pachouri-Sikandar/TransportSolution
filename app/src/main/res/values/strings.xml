@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">TransportSolution</string>
     <string name="splash_title">TransPort\nSolutions</string>
+
+    <string name="facebook_app_id">1113876735351588</string>
+    <string name="ACCOUNT_KIT_CLIENT_TOKEN">4d2b7b96f925ea3f11fd82f0f6245c18</string>
+    <string name="APP_NAME">Transport</string>
 </resources>

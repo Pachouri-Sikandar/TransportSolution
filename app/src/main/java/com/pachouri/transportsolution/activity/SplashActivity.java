@@ -21,6 +21,7 @@ import com.facebook.accountkit.ui.AccountKitActivity;
 import com.facebook.accountkit.ui.AccountKitConfiguration;
 import com.facebook.accountkit.ui.LoginType;
 import com.pachouri.transportsolution.BaseActivity;
+import com.pachouri.transportsolution.Constants;
 import com.pachouri.transportsolution.R;
 import com.pachouri.transportsolution.util.CommonUtil;
 import com.pachouri.transportsolution.widgets.AppButton;
@@ -36,7 +37,6 @@ import butterknife.OnClick;
  */
 public class SplashActivity extends BaseActivity {
 
-    private static final long SCREEN_TIME = 1000;
     private static final int APP_REQUEST_CODE = 12112;
 
     @Bind(R.id.txt_title)
@@ -108,9 +108,10 @@ public class SplashActivity extends BaseActivity {
         handleAccountKitResult(requestCode,resultCode,data);
     }
 
-    private void redirectToHomeActivity() {
+    private void redirectToHomeActivity(String phoneNumber) {
+        finish();
         Intent intent = new Intent(this, HomeActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        intent.putExtra(Constants.PREF_KEY_PHONE_NUMBER,phoneNumber);
         startActivity(intent);
     }
 
@@ -142,7 +143,7 @@ public class SplashActivity extends BaseActivity {
                 public void onSuccess(com.facebook.accountkit.Account account) {
                     PhoneNumber phoneNumber = account.getPhoneNumber();
                     if (phoneNumber != null) {
-
+                        redirectToHomeActivity(phoneNumber.getPhoneNumber());
                     } else {
                         MessageUtils.showToast(getApplicationContext(), "Error #SSA01");
                     }
