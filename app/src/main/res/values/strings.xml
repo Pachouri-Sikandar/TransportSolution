@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TransportSolution</string>
+
+    <string name="bottom_menu_receivers">Receivers</string>
+    <string name="bottom_menu_my_history">My History</string>
+    <string name="bottom_menu_my_profile">My Profile</string>
+
 </resources>
