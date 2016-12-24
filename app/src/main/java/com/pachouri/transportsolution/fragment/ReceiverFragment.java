@@ -15,6 +15,7 @@ import com.pachouri.transportsolution.activity.SplashActivity;
 import com.pachouri.transportsolution.adapter.ReceiversGridAdapter;
 import com.pachouri.transportsolution.interfaces.FragmentCommunicator;
 import com.pachouri.transportsolution.models.ReceiverDetailsModel;
+import com.pachouri.transportsolution.util.ItemDecoratorStaggeredGridSpacing;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,6 +66,7 @@ public class ReceiverFragment extends Fragment {
                 if (receiverDetailsList.size() > 0) {
                     ReceiversGridAdapter receiversGridAdapter = new ReceiversGridAdapter(attachContext, receiverDetailsList);
                     GridLayoutManager gridLayoutManager = new GridLayoutManager(attachContext, 2);
+                    recyclerViewReceiver.addItemDecoration(new ItemDecoratorStaggeredGridSpacing(5, 5));
                     recyclerViewReceiver.setLayoutManager(gridLayoutManager);
                     recyclerViewReceiver.setAdapter(receiversGridAdapter);
                 }
