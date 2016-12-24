@@ -13,8 +13,6 @@ import com.pachouri.transportsolution.R;
 public class SplashActivity extends BaseActivity {
 
     private static final long SCREEN_TIME = 1000;
-    private Handler handler;
-    private Runnable runnable;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,29 +22,25 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void startSplashTimer() {
-        runnable = new Runnable() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 redirectToHomeActivity();
             }
-        };
-
-        handler = new Handler();
-        handler.postDelayed(runnable, SCREEN_TIME);
+        }, SCREEN_TIME);
     }
 
     private void redirectToHomeActivity() {
         Intent intent = new Intent(this, HomeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
+        finish();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        if (runnable != null) {
-            handler.removeCallbacks(runnable);
-        }
     }
 
 }
