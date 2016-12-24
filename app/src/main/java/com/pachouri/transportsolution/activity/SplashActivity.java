@@ -58,6 +58,8 @@ public class SplashActivity extends BaseActivity {
     private static final int BACKGROUND_ANIMATION_DURATION=1000;
     Interpolator interpolation ;
 
+    private static final long SCREEN_TIME = 1000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,8 +115,8 @@ public class SplashActivity extends BaseActivity {
         Intent intent = new Intent(this, HomeActivity.class);
         intent.putExtra(Constants.PREF_KEY_PHONE_NUMBER,phoneNumber);
         startActivity(intent);
+        finish();
     }
-
 
     private void initiateAccountKitLogin() {
         final Intent intent = new Intent(this, AccountKitActivity.class);

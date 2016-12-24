@@ -10,4 +10,5 @@ public class MessageUtils {
     public static void showToast(Context applicationContext, String s) {
         Toast.makeText(applicationContext, s, Toast.LENGTH_SHORT).show();
     }
+
 }
