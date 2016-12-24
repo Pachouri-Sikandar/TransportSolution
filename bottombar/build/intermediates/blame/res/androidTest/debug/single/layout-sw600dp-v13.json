@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/res/merged/androidTest/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "/home/tt-riyaz/Android Projects/TransportSolution/bottombar/build/intermediates/exploded-aar/com.android.support/design/24.1.1/res/layout-sw600dp-v13/design_layout_snackbar.xml"
+    },
+    {
         "merged": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/res/merged/androidTest/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
         "source": "/home/ankit/TailoredTechApps/Katrina Android/katrina-app-android/bottombar/build/intermediates/exploded-aar/com.android.support/design/24.1.1/res/layout-sw600dp-v13/design_layout_snackbar.xml"
     },
