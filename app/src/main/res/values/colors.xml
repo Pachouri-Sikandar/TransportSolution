@@ -4,4 +4,5 @@
     <color name="colorPrimary">#333133</color>
     <color name="colorAccent">#f69221</color>
     <color name="snackBarColor">#808080</color>
+    <color name="bg_fragment">#E4E5E6</color>
 </resources>
