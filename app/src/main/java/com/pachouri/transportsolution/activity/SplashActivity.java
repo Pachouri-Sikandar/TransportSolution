@@ -1,5 +1,6 @@
 package com.pachouri.transportsolution.activity;
 
+import android.accounts.Account;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,7 +10,16 @@ import android.view.animation.Interpolator;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.facebook.accountkit.AccountKit;
+import com.facebook.accountkit.AccountKitCallback;
+import com.facebook.accountkit.AccountKitError;
+import com.facebook.accountkit.AccountKitLoginResult;
+import com.facebook.accountkit.PhoneNumber;
+import com.facebook.accountkit.ui.AccountKitActivity;
+import com.facebook.accountkit.ui.AccountKitConfiguration;
+import com.facebook.accountkit.ui.LoginType;
 import com.pachouri.transportsolution.BaseActivity;
 import com.pachouri.transportsolution.R;
 import com.pachouri.transportsolution.util.CommonUtil;
@@ -19,6 +29,7 @@ import org.w3c.dom.Text;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by ankit on 12/24/16.
@@ -26,6 +37,7 @@ import butterknife.ButterKnife;
 public class SplashActivity extends BaseActivity {
 
     private static final long SCREEN_TIME = 1000;
+    private static final int APP_REQUEST_CODE = 12112;
 
     @Bind(R.id.txt_title)
     TextView txtTitle;
@@ -75,6 +87,11 @@ public class SplashActivity extends BaseActivity {
         },INITIAL_DELAY);
     }
 
+    @OnClick(R.id.btn_login)
+    protected void onClickLogin(){
+        initiateAccountKitLogin();
+    }
+
     private void initViews(){
         txtTitle.setTranslationY(250);
         txtContent.setAlpha(0);
@@ -85,9 +102,58 @@ public class SplashActivity extends BaseActivity {
         loginContent.setTranslationY(70f);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        handleAccountKitResult(requestCode,resultCode,data);
+    }
+
     private void redirectToHomeActivity() {
         Intent intent = new Intent(this, HomeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
         startActivity(intent);
+    }
+
+
+    private void initiateAccountKitLogin() {
+        final Intent intent = new Intent(this, AccountKitActivity.class);
+        AccountKitConfiguration.AccountKitConfigurationBuilder configurationBuilder =
+                new AccountKitConfiguration.AccountKitConfigurationBuilder(
+                        LoginType.PHONE,
+                        AccountKitActivity.ResponseType.TOKEN);
+        configurationBuilder.setSMSWhitelist(new String[]{"IN", "US", "AE", "GB"});
+        configurationBuilder.setDefaultCountryCode("IN");
+        configurationBuilder.setReceiveSMS(true);
+        configurationBuilder.setTitleType(AccountKitActivity.TitleType.LOGIN);
+
+        // ... perform additional configuration ...
+        intent.putExtra(
+                AccountKitActivity.ACCOUNT_KIT_ACTIVITY_CONFIGURATION,
+                configurationBuilder.build());
+        startActivityForResult(intent, APP_REQUEST_CODE);
+    }
+
+    private void handleAccountKitResult(final int requestCode, final int resultCode, final Intent data) {
+        AccountKitLoginResult loginResult = data.getParcelableExtra(AccountKitLoginResult.RESULT_KEY);
+        if (loginResult.getError() == null && loginResult.getAccessToken() != null) {
+
+            AccountKit.getCurrentAccount(new AccountKitCallback<com.facebook.accountkit.Account>() {
+                @Override
+                public void onSuccess(com.facebook.accountkit.Account account) {
+                    PhoneNumber phoneNumber = account.getPhoneNumber();
+                    if (phoneNumber != null) {
+
+                    } else {
+                        MessageUtils.showToast(getApplicationContext(), "Error #SSA01");
+                    }
+                }
+                @Override
+                public void onError(AccountKitError accountKitError) {
+                    MessageUtils.showToast(getApplicationContext(), "Error #SSA01");
+                }
+            });
+        } else {
+            Toast.makeText(this, "Sorry, Something went wrong.", Toast.LENGTH_LONG).show();
+        }
     }
 }
