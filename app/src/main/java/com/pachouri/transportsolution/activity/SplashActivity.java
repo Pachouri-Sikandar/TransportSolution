@@ -80,6 +80,11 @@ public class SplashActivity extends BaseActivity {
                 UserLifecycleModel.UserStatus userLifecycleModel = UserLifecycleModel.getUserCurrentState(getApplicationContext());
                 if(userLifecycleModel == UserLifecycleModel.UserStatus.LoggedIn)
                     openHomeScreen();
+                else if(userLifecycleModel == UserLifecycleModel.UserStatus.AdharRegistrationNotComplete){
+                    finish();
+                    Intent intent = new Intent(SplashActivity.this,AadharVerification.class);
+                    startActivity(intent);
+                }
                 else if(userLifecycleModel == UserLifecycleModel.UserStatus.NotLoggedIn) {
 
                     CommonUtil.animateViewColor(rlContainer,CommonUtil.BACKGROUND, ContextCompat.getColor(getApplicationContext(),R.color.colorPrimary),android.R.color.white,BACKGROUND_ANIMATION_DURATION);

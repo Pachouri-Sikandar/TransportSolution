@@ -50,6 +50,9 @@ public class UserModel extends Model implements Serializable {
     @Column(name = "image_url")
     private String ImageUrl;
 
+    @Column(name = "aadhar")
+    private String aadharNumber;
+
     public static boolean isUserAlreadyRegistered(String phoneNumber){
         UserModel userModel = new Select().from(UserModel.class).where(COLUMN_PHONE_NUMBER+" = ?",phoneNumber).executeSingle();
 
@@ -184,5 +187,13 @@ public class UserModel extends Model implements Serializable {
 
     public void setImageUrl(String imageUrl) {
         ImageUrl = imageUrl;
+    }
+
+    public String getAadharNumber() {
+        return aadharNumber;
+    }
+
+    public void setAadharNumber(String aadharNumber) {
+        this.aadharNumber = aadharNumber;
     }
 }
