@@ -5,7 +5,8 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:background="@color/bg_fragment"
-              android:orientation="vertical">
+              android:orientation="vertical"
+              android:padding="@dimen/dp_4">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -77,6 +78,7 @@
                         android:maxLines="1"
                         android:padding="@dimen/dp_2"
                         android:text="9623435159"
+                        app:textStyle="@integer/semi_bold"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/sp_10"
                         />
@@ -115,7 +117,7 @@
                         android:padding="@dimen/dp_2"
                         android:text="9623435159"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/sp_8"
+                        android:textSize="@dimen/sp_10"
                         />
 
                     <com.pachouri.transportsolution.widgets.AppTextView
@@ -127,7 +129,7 @@
                         android:padding="@dimen/dp_2"
                         android:text="Address"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/sp_8"
+                        android:textSize="@dimen/sp_10"
                         />
 
                     <com.pachouri.transportsolution.widgets.AppTextView
@@ -139,7 +141,7 @@
                         android:padding="@dimen/dp_2"
                         android:text="Time"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/sp_8"
+                        android:textSize="@dimen/sp_10"
                         />
 
                     <com.pachouri.transportsolution.widgets.AppTextView
@@ -151,7 +153,7 @@
                         android:padding="@dimen/dp_2"
                         android:text="Charges"
                         android:textColor="@android:color/black"
-                        android:textSize="@dimen/sp_8"
+                        android:textSize="@dimen/sp_10"
                         />
 
                 </LinearLayout>
