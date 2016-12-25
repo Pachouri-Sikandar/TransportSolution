@@ -32,6 +32,7 @@
              android:textSize="16sp"
              android:layout_marginRight="40dp"
              android:hint="Aadhar Number"
+             android:maxLength="12"
              android:background="@drawable/background_edittext"
              android:lines="1"
              android:inputType="number"
