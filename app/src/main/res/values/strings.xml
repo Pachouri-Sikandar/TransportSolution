@@ -15,4 +15,6 @@
     <string name="email">Email</string>
     <string name="cancel_permanently">Cancel</string>
 
+    <string name="txt_rs_symbol">₹ %1$s</string>
+
 </resources>

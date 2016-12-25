@@ -33,6 +33,8 @@
              android:layout_marginRight="40dp"
              android:hint="Aadhar Number"
              android:background="@drawable/background_edittext"
+             android:lines="1"
+             android:inputType="number"
              android:gravity="center"
              android:layout_marginBottom="40dp"
              app:textStyle="@integer/regular"

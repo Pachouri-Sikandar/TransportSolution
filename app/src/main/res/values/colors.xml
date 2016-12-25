@@ -9,4 +9,5 @@
     <color name="aqua_spring">#ECEDEC</color>
     <color name="bg_fragment">#E4E5E6</color>
     <color name="whisper_grey">#eeeeee</color>
+    <color name="line_separator">#8CC0C0C0</color>
 </resources>
