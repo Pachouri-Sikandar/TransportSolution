@@ -78,28 +78,27 @@ public class SplashActivity extends BaseActivity {
             public void run() {
 
                 UserLifecycleModel.UserStatus userLifecycleModel = UserLifecycleModel.getUserCurrentState(getApplicationContext());
-                if(userLifecycleModel == UserLifecycleModel.UserStatus.LoggedIn)
+                if (userLifecycleModel == UserLifecycleModel.UserStatus.LoggedIn)
                     openHomeScreen();
-                else if(userLifecycleModel == UserLifecycleModel.UserStatus.AdharRegistrationNotComplete){
+                else if (userLifecycleModel == UserLifecycleModel.UserStatus.AdharRegistrationNotComplete) {
                     finish();
-                    Intent intent = new Intent(SplashActivity.this,AadharVerification.class);
+                    Intent intent = new Intent(SplashActivity.this, AadharVerification.class);
                     startActivity(intent);
-                }
-                else if(userLifecycleModel == UserLifecycleModel.UserStatus.NotLoggedIn) {
+                } else if (userLifecycleModel == UserLifecycleModel.UserStatus.NotLoggedIn) {
 
-                    CommonUtil.animateViewColor(rlContainer,CommonUtil.BACKGROUND, ContextCompat.getColor(getApplicationContext(),R.color.colorPrimary),android.R.color.white,BACKGROUND_ANIMATION_DURATION);
-                    CommonUtil.animateViewColor(txtTitle,CommonUtil.TEXT_COLOR,android.R.color.white,ContextCompat.getColor(getApplicationContext(),R.color.colorPrimary),BACKGROUND_ANIMATION_DURATION);
+                    CommonUtil.animateViewColor(rlContainer, CommonUtil.BACKGROUND, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary), android.R.color.white, BACKGROUND_ANIMATION_DURATION);
+                    CommonUtil.animateViewColor(txtTitle, CommonUtil.TEXT_COLOR, android.R.color.white, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary), BACKGROUND_ANIMATION_DURATION);
                     txtTitle.animate().translationY(0).setInterpolator(interpolation).setDuration(800);
                     appButton.postDelayed(new Runnable() {
                         @Override
-                        public void run(){
+                        public void run() {
                             appButton.animate().alpha(1).setInterpolator(interpolation).setDuration(700);
                             loginContent.animate().alpha(1).translationY(0).setInterpolator(interpolation).setDuration(700);
                             txtContent.animate().alpha(1).translationY(0).setInterpolator(interpolation).setDuration(700);
                         }
-                    },300);
+                    }, 300);
 
-                }else if(userLifecycleModel == UserLifecycleModel.UserStatus.PersonalProfileNotComplete){
+                } else if (userLifecycleModel == UserLifecycleModel.UserStatus.PersonalProfileNotComplete) {
                     UserModel userModel = UserModel.getInstance(getApplicationContext());
                     redirectToHomeActivity(userModel.getMobileNumber());
                 }
@@ -108,9 +107,9 @@ public class SplashActivity extends BaseActivity {
         }, INITIAL_DELAY);
     }
 
-    private void openHomeScreen(){
+    private void openHomeScreen() {
         finish();
-        Intent intent = new Intent(this,HomeActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
     }
 
@@ -119,13 +118,17 @@ public class SplashActivity extends BaseActivity {
         List<ReceiverDetailsModel> list = getReceivers();
         if (list != null) {
             if (list.size() == 0) {
-                saveSomeReceivers();
+                saveReceiver1();
+                saveReceiver2();
+                saveReceiver3();
+                saveReceiver4();
+                saveReceiver5();
             }
         }
 
         List<HistoryModel> historyList = getHistory();
-        if (historyList != null){
-            if (list.size() == 0){
+        if (historyList != null) {
+            if (list.size() == 0) {
                 saveSomeHistories();
             }
         }
@@ -153,7 +156,7 @@ public class SplashActivity extends BaseActivity {
     private void redirectToHomeActivity(String phoneNumber) {
         finish();
         Intent intent = new Intent(this, PersonalProfile.class);
-        intent.putExtra(Constants.PREF_KEY_PHONE_NUMBER,phoneNumber);
+        intent.putExtra(Constants.PREF_KEY_PHONE_NUMBER, phoneNumber);
 
         startActivity(intent);
         finish();
@@ -196,12 +199,11 @@ public class SplashActivity extends BaseActivity {
 
                         UserModel userModel = new UserModel();
                         userModel.setMobileNumber(phoneNumber.getPhoneNumber());
-                        UserModel.setUpInstance(getApplicationContext(),userModel);
+                        UserModel.setUpInstance(getApplicationContext(), userModel);
 
-                        if(UserModel.isUserAlreadyRegistered(phoneNumber.getPhoneNumber())){
+                        if (UserModel.isUserAlreadyRegistered(phoneNumber.getPhoneNumber())) {
                             openHomeScreen();
-                        }
-                        else
+                        } else
                             redirectToHomeActivity(phoneNumber.getPhoneNumber());
 
                     } else {
@@ -219,20 +221,74 @@ public class SplashActivity extends BaseActivity {
         }
     }
 
-    private void saveSomeReceivers() {
-        for (int i = 0; i < 5; i++) {
-            ReceiverDetailsModel model = new ReceiverDetailsModel();
-            model.setImageUrl("https://lh3.googleusercontent.com/-B7ObxLWBsRU/AAAAAAAAAAI/AAAAAAAAW_w/VGt2B9ZL1k4/s46-c-k-no/photo.jpg");
-            model.setFirstName("Ankit");
-            model.setLastName("Pachouri " + i);
-            model.setEmail("email" + i);
-            model.setMobileNumber("000000000" + i);
-            model.setPlaceFrom("Pune");
-            model.setPlaceTo("Mumbai");
-            model.setLeavingTime("00 : 0" + i);
-            model.setDeliveryCharges(i + "");
-            model.save();
-        }
+    private void saveReceiver1() {
+        ReceiverDetailsModel model = new ReceiverDetailsModel();
+        model.setImageUrl("https://lh3.googleusercontent.com/-B7ObxLWBsRU/AAAAAAAAAAI/AAAAAAAAW_w/VGt2B9ZL1k4/s46-c-k-no/photo.jpg");
+        model.setFirstName("Ankit");
+        model.setLastName("Pachouri ");
+        model.setEmail("ankit@gmail.com");
+        model.setMobileNumber("9623435159");
+        model.setPlaceFrom("Pune");
+        model.setPlaceTo("Mumbai");
+        model.setLeavingTime("12:40 am");
+        model.setDeliveryCharges("100");
+        model.save();
+    }
+
+    private void saveReceiver2() {
+        ReceiverDetailsModel model = new ReceiverDetailsModel();
+        model.setImageUrl("http://wallpaper-gallery.net/image.php?pic=/images/profile-pics/profile-pics-20.jpg");
+        model.setFirstName("Riyaz");
+        model.setLastName("Ahmed");
+        model.setEmail("riyaz@gmail.com");
+        model.setMobileNumber("9078904567");
+        model.setPlaceFrom("Pune");
+        model.setPlaceTo("Bangalore");
+        model.setLeavingTime("02:40 pm");
+        model.setDeliveryCharges("500");
+        model.save();
+    }
+
+    private void saveReceiver3() {
+        ReceiverDetailsModel model = new ReceiverDetailsModel();
+        model.setImageUrl("https://organicthemes.com/demo/profile/files/2012/12/profile_img.png");
+        model.setFirstName("Sagar");
+        model.setLastName("Yadav");
+        model.setEmail("sagar@gmail.com");
+        model.setMobileNumber("9009000772");
+        model.setPlaceFrom("Indore");
+        model.setPlaceTo("Pune");
+        model.setLeavingTime("05:30 pm");
+        model.setDeliveryCharges("300");
+        model.save();
+    }
+
+    private void saveReceiver4() {
+        ReceiverDetailsModel model = new ReceiverDetailsModel();
+        model.setImageUrl("http://wallpaper-gallery.net/image.php?pic=/images/profile-pics/profile-pics-11.jpg");
+        model.setFirstName("Jagdish");
+        model.setLastName("Pachouri ");
+        model.setEmail("jagdish@gmail.com");
+        model.setMobileNumber("9827244543");
+        model.setPlaceFrom("Indore");
+        model.setPlaceTo("Mumbai");
+        model.setLeavingTime("07:00 pm");
+        model.setDeliveryCharges("50");
+        model.save();
+    }
+
+    private void saveReceiver5() {
+        ReceiverDetailsModel model = new ReceiverDetailsModel();
+        model.setImageUrl("http://wallpaper-gallery.net/image.php?pic=/images/profile-pics/profile-pics-18.jpg");
+        model.setFirstName("Utkarsh");
+        model.setLastName("Parashar");
+        model.setEmail("utkarsh@gmail.com");
+        model.setMobileNumber("9623435159");
+        model.setPlaceFrom("Pune");
+        model.setPlaceTo("Mumbai");
+        model.setLeavingTime("12:40 am");
+        model.setDeliveryCharges("100");
+        model.save();
     }
 
     public static List<ReceiverDetailsModel> getReceivers() {

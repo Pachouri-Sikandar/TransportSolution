@@ -38,7 +38,6 @@
                         android:layout_height="wrap_content"
                         android:maxLines="1"
                         android:padding="@dimen/dp_4"
-                        android:text="ANkit"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/sp_14"
                         app:textStyle="@integer/regular"/>
@@ -50,7 +49,6 @@
                         android:layout_below="@+id/textViewEmail"
                         android:maxLines="1"
                         android:padding="@dimen/dp_4"
-                        android:text="ANkit"
                         android:textColor="@android:color/black"
                         android:textSize="@dimen/sp_14"
                         app:textStyle="@integer/regular"/>
@@ -91,7 +89,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="@dimen/dp_8"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/ic_call"
+                        android:src="@drawable/ic_menu_profile"
                         />
 
                     <LinearLayout
@@ -107,7 +105,6 @@
                             android:layout_height="wrap_content"
                             android:maxLines="1"
                             android:padding="@dimen/dp_4"
-                            android:text="ANkit"
                             android:textColor="@android:color/black"
                             android:textSize="@dimen/sp_14"
                             app:textStyle="@integer/regular"/>
@@ -118,7 +115,6 @@
                             android:layout_height="wrap_content"
                             android:maxLines="1"
                             android:padding="@dimen/dp_4"
-                            android:text="ANkit"
                             android:textColor="@android:color/black"
                             android:textSize="@dimen/sp_14"
                             app:textStyle="@integer/regular"/>
@@ -163,7 +159,6 @@
                             android:layout_height="wrap_content"
                             android:maxLines="1"
                             android:padding="@dimen/dp_4"
-                            android:text="ANkit"
                             android:textColor="@android:color/black"
                             android:textSize="@dimen/sp_14"
                             app:textStyle="@integer/regular"/>
@@ -174,7 +169,6 @@
                             android:layout_height="wrap_content"
                             android:maxLines="1"
                             android:padding="@dimen/dp_4"
-                            android:text="ANkit"
                             android:textColor="@android:color/black"
                             android:textSize="@dimen/sp_14"
                             app:textStyle="@integer/regular"/>
