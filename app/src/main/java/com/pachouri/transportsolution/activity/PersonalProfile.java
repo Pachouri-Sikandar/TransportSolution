@@ -2,6 +2,7 @@ package com.pachouri.transportsolution.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
+import pl.aprilapps.easyphotopicker.DefaultCallback;
+import pl.aprilapps.easyphotopicker.EasyImage;
 
 public class PersonalProfile extends BaseActivity {
 
@@ -105,7 +108,7 @@ public class PersonalProfile extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        MediaSelector.handleActivityResult(requestCode, resultCode, data, true,PersonalProfile.this, new MediaSelector.IMediaSelector() {
+        /*MediaSelector.handleActivityResult(requestCode, resultCode, data, true,PersonalProfile.this, new MediaSelector.IMediaSelector() {
             @Override
             public void originalImageFile(File originalImage) {}
 
@@ -125,6 +128,27 @@ public class PersonalProfile extends BaseActivity {
 
             @Override
             public void onMediaSelectionCancel() {}
+        });*/
+        EasyImage.handleActivityResult(requestCode, resultCode, data, this, new DefaultCallback() {
+            @Override
+            public void onImagePickerError(Exception e, EasyImage.ImageSource source, int type) {
+                //CommonUtils.showToast(fragment.getActivity(), fragment.getString(R.string.error_on_picking_image));
+            }
+
+            @Override
+            public void onImagePicked(File imageFile, EasyImage.ImageSource source, int type) {
+                profilePic = imageFile;
+                Glide.with(PersonalProfile.this).load(imageFile).into(circleImageView);
+            }
+
+            @Override
+            public void onCanceled(EasyImage.ImageSource source, int type) {
+                if (source == EasyImage.ImageSource.CAMERA) {
+                    File photoFile = EasyImage.lastlyTakenButCanceledPhoto(PersonalProfile.this);
+                    if (photoFile != null)
+                        photoFile.delete();
+                }
+            }
         });
     }
 }
