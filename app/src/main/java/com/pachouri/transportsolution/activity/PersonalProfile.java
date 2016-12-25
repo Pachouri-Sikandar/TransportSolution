@@ -70,7 +70,7 @@ public class PersonalProfile extends BaseActivity {
     protected void onClickSave(){
         if(editTextFirstName.getText().toString().isEmpty())
             MessageUtils.showToast(getApplicationContext(),"First name is namditory");
-        else if(!editTextEmail.getText().toString().isEmpty())
+        else if(editTextEmail.getText().toString().isEmpty())
             MessageUtils.showToast(getApplicationContext(),"Email is mandatory");
         else if(!CommonUtil.isValidEmail(editTextEmail.getText()))
             MessageUtils.showToast(getApplicationContext(),"Invalid email");
