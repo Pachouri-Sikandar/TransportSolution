@@ -1,5 +1,6 @@
 package com.pachouri.transportsolution.activity;
 
+import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -52,6 +53,10 @@ public class AadharVerification extends AppCompatActivity {
             UserModel userModel = UserModel.getInstance(getApplicationContext());
             userModel.setAadharNumber(aadhar);
             UserModel.setUpInstance(getApplicationContext(),userModel);
+
+            Intent intent = new Intent(AadharVerification.this,HomeActivity.class);
+            startActivity(intent);
+            finish();
         }else{
             MessageUtils.showToast(getApplicationContext(),"Please enter valid aadhar number");
         }
