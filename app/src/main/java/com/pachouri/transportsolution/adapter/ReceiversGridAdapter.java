@@ -1,6 +1,8 @@
 package com.pachouri.transportsolution.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -55,12 +57,25 @@ public class ReceiversGridAdapter extends RecyclerView.Adapter<ReceiversGridAdap
                         .ic_menu_profile).into(viewHolder.imageViewUser);
             }
             viewHolder.textViewName.setText(receiverModel.getFirstName() + " " + receiverModel.getLastName());
-            viewHolder.textViewFrom.setText(receiverModel.getPlaceFrom() + " to ");
+            viewHolder.textViewFrom.setText(receiverModel.getPlaceFrom() + " to " + receiverModel
+                    .getPlaceTo());
             viewHolder.textViewTo.setText(receiverModel.getPlaceTo());
             viewHolder.textViewTime.setText(receiverModel.getLeavingTime());
-            viewHolder.textViewContactNumber.setText(receiverModel.getMobileNumber());
             viewHolder.textViewCharges.setText(context.getResources().getString(R.string.txt_rs_symbol,
-                    String.valueOf(receiverModel.getDeliveryCharges()).trim()) + "Min.");
+                    String.valueOf(receiverModel.getDeliveryCharges()).trim()) + " Min.");
+
+            if (receiverModel.getMobileNumber().isEmpty() || receiverModel.getMobileNumber() ==
+                    null) {
+                viewHolder.imageViewContactNumber.setVisibility(View.INVISIBLE);
+            } else {
+                viewHolder.imageViewContactNumber.setVisibility(View.VISIBLE);
+                viewHolder.imageViewContactNumber.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        openCallDialer(receiverModel.getMobileNumber());
+                    }
+                });
+            }
         }
     }
 
@@ -80,14 +95,22 @@ public class ReceiversGridAdapter extends RecyclerView.Adapter<ReceiversGridAdap
         protected TextView textViewTo;
         @Bind(R.id.textViewTime)
         protected TextView textViewTime;
-        @Bind(R.id.textViewContactNumber)
-        protected TextView textViewContactNumber;
+        @Bind(R.id.imageViewContactNumber)
+        protected ImageView imageViewContactNumber;
         @Bind(R.id.textViewCharges)
         protected TextView textViewCharges;
 
         public ReceiverViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+        }
+    }
+
+    private void openCallDialer(String contactNumber) {
+        if (context != null) {
+            Intent callIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + contactNumber));
+            callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(callIntent);
         }
     }
 }
