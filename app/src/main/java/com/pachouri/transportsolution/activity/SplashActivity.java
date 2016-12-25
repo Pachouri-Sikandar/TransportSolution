@@ -131,7 +131,7 @@ public class SplashActivity extends BaseActivity {
 
     private void redirectToHomeActivity(String phoneNumber) {
         finish();
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, PersonalProfile.class);
         intent.putExtra(Constants.PREF_KEY_PHONE_NUMBER,phoneNumber);
         startActivity(intent);
         finish();
@@ -164,10 +164,17 @@ public class SplashActivity extends BaseActivity {
                 public void onSuccess(com.facebook.accountkit.Account account) {
                     PhoneNumber phoneNumber = account.getPhoneNumber();
                     if (phoneNumber != null) {
+
                         UserModel userModel = new UserModel();
                         userModel.setMobileNumber(phoneNumber.getPhoneNumber());
                         UserModel.setUpInstance(getApplicationContext(),userModel);
-                        redirectToHomeActivity(phoneNumber.getPhoneNumber());
+
+                        if(UserModel.isUserAlreadyRegistered(phoneNumber.getPhoneNumber())){
+                            openHomeScreen();
+                        }
+                        else
+                            redirectToHomeActivity(phoneNumber.getPhoneNumber());
+
                     } else {
                         MessageUtils.showToast(getApplicationContext(), "Error #SSA01");
                     }

@@ -6,6 +6,7 @@ import com.activeandroid.ActiveAndroid;
 import com.facebook.accountkit.AccountKit;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.karumi.dexter.Dexter;
 
 import java.lang.reflect.Modifier;
 
@@ -19,6 +20,7 @@ public class BaseApplication extends Application {
         super.onCreate();
         AccountKit.initialize(getApplicationContext());
         ActiveAndroid.initialize(this);
+        Dexter.initialize(this);
     }
     public Gson getGson() {
         if (gson == null) {
