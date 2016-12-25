@@ -28,7 +28,6 @@
                 android:layout_height="@dimen/dp_72"
                 android:layout_gravity="center_horizontal"
                 android:adjustViewBounds="true"
-                android:src="@drawable/ic_menu_history"
                 />
 
             <com.pachouri.transportsolution.widgets.AppTextView
@@ -40,7 +39,6 @@
                 android:gravity="center"
                 android:maxLines="1"
                 android:padding="@dimen/dp_4"
-                android:text="Name"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/sp_14"
                 app:textStyle="@integer/regular"/>
@@ -61,7 +59,6 @@
                     android:layout_marginRight="@dimen/dp_8"
                     android:gravity="center"
                     android:maxLines="1"
-                    android:text="FROM"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/sp_10"/>
 
@@ -107,7 +104,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:maxLines="1"
-                    android:text="Time"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/sp_10"/>
 
@@ -145,7 +141,6 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:maxLines="1"
-                    android:text="Charges"
                     android:textColor="@android:color/black"
                     android:textSize="@dimen/sp_10"/>
             </LinearLayout>
