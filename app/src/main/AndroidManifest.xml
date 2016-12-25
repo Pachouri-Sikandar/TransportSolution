@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.pachouri.transportsolution">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.pachouri.transportsolution">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
@@ -19,25 +19,25 @@
         <!-- Active Android Set Up -->
         <meta-data
             android:name="AA_DB_NAME"
-            android:value="transport.db" />
+            android:value="transport.db"/>
         <meta-data
             android:name="AA_DB_VERSION"
-            android:value="1" />
+            android:value="1"/>
         <meta-data
             android:name="AA_MODELS"
-            android:value="com.pachouri.transportsolution.model" />
+            android:value="com.pachouri.transportsolution.model"/>
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
+            android:value="@string/facebook_app_id"/>
         <meta-data
             android:name="com.facebook.accountkit.ClientToken"
-            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
+            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN"/>
         <meta-data
             android:name="com.facebook.accountkit.ApplicationName"
-            android:value="@string/APP_NAME" />
+            android:value="@string/APP_NAME"/>
         <meta-data
             android:name="com.facebook.accountkit.FacebookAppEventsEnabled"
-            android:value="false" />
+            android:value="false"/>
 
         <!-- Activities -->
         <activity
@@ -46,9 +46,9 @@
             android:screenOrientation="portrait"
             android:theme="@style/FullScreenTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
@@ -56,11 +56,11 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:theme="@style/AccountKitTheme"
-            tools:replace="android:theme" />
+            tools:replace="android:theme"/>
         <activity
             android:name=".activity.HomeActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity android:name=".activity.PersonalProfile"></activity>
     </application>
 
