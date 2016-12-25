@@ -12,8 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:text="@string/APP_NAME"
         android:textColor="@color/colorWhite"
-        android:textSize="16sp"
-        android:textStyle="bold"
+        android:textSize="18sp"
+        app:textStyle="@integer/bold"
         />
 </android.support.v7.widget.Toolbar>
