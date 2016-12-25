@@ -21,6 +21,7 @@ import com.facebook.accountkit.ui.LoginType;
 import com.pachouri.transportsolution.BaseActivity;
 import com.pachouri.transportsolution.Constants;
 import com.pachouri.transportsolution.R;
+import com.pachouri.transportsolution.models.HistoryModel;
 import com.pachouri.transportsolution.models.ReceiverDetailsModel;
 import com.pachouri.transportsolution.util.CommonUtil;
 import com.pachouri.transportsolution.widgets.AppButton;
@@ -143,6 +144,14 @@ public class SplashActivity extends BaseActivity {
                 saveSomeReceivers();
             }
         }
+
+        List<HistoryModel> historyList = getHistory();
+        if (historyList != null){
+            if (list.size() == 0){
+                saveSomeHistories();
+            }
+        }
+
         Intent open = new Intent(this, HomeActivity.class);
         startActivity(open);
     }
@@ -191,6 +200,28 @@ public class SplashActivity extends BaseActivity {
     public static List<ReceiverDetailsModel> getReceivers() {
         return new Select()
                 .from(ReceiverDetailsModel.class)
+                .execute();
+    }
+
+    private void saveSomeHistories() {
+        for (int i = 0; i < 5; i++) {
+            HistoryModel model = new HistoryModel();
+            model.setImageUrl("https://lh3.googleusercontent.com/-B7ObxLWBsRU/AAAAAAAAAAI/AAAAAAAAW_w/VGt2B9ZL1k4/s46-c-k-no/photo.jpg");
+            model.setFirstName("Ankit");
+            model.setLastName("Pachouri " + i);
+            model.setEmail("email" + i);
+            model.setMobileNumber("000000000" + i);
+            model.setItem("Item: " + i);
+            model.setDeliveredAddress("Mumbai");
+            model.setDeliveredTime("00 : 0" + i);
+            model.setDeliveryCharges(i + "");
+            model.save();
+        }
+    }
+
+    public static List<HistoryModel> getHistory() {
+        return new Select()
+                .from(HistoryModel.class)
                 .execute();
     }
 }
