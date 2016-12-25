@@ -9,6 +9,8 @@ import android.widget.EditText;
 
 import com.pachouri.transportsolution.R;
 import com.pachouri.transportsolution.models.UserLifecycleModel;
+import com.pachouri.transportsolution.models.UserModel;
+import com.pachouri.transportsolution.util.CommonUtil;
 import com.pachouri.transportsolution.widgets.AppButton;
 import com.pachouri.transportsolution.widgets.AppTextView;
 
@@ -46,6 +48,12 @@ public class AadharVerification extends AppCompatActivity {
     protected void onClickVerify(){
         String aadhar = editText.getText().toString();
 
-
+        if(CommonUtil.validateAadharNumber(aadhar)){
+            UserModel userModel = UserModel.getInstance(getApplicationContext());
+            userModel.setAadharNumber(aadhar);
+            UserModel.setUpInstance(getApplicationContext(),userModel);
+        }else{
+            MessageUtils.showToast(getApplicationContext(),"Please enter valid aadhar number");
+        }
     }
 }

@@ -70,14 +70,15 @@ public class PersonalProfile extends BaseActivity {
         else if(!editTextEmail.getText().toString().isEmpty()&&!CommonUtil.isValidEmail(editTextEmail.getText()))
             MessageUtils.showToast(getApplicationContext(),"Invalid email");
         else{
-            UserModel userModel = new UserModel();
+            UserModel userModel = UserModel.getInstance(getApplicationContext());
             userModel.setFirstName(editTextFirstName.getText().toString());
             userModel.setLastName(editTextLastName.getText().toString());
             userModel.setEmail(editTextEmail.getText().toString());
             if(profilePic!=null)
                 userModel.setImageUrl(profilePic.getAbsolutePath());
             userModel.setMobileNumber(mobilePhone);
-            userModel.save();
+
+            UserModel.setUpInstance(getApplicationContext(),userModel);
 
             Intent intent = new Intent(PersonalProfile.this,AadharVerification.class);
             startActivity(intent);
