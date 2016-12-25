@@ -4,6 +4,10 @@ import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
 import android.view.View;
 
+import com.pachouri.transportsolution.VerhoeffAlgorithm;
+
+import java.util.regex.Pattern;
+
 /**
  * Created by ankit on 12/24/16.
  */
@@ -24,5 +28,14 @@ public class CommonUtil {
             return false;
 
         return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    }
+
+    public static boolean validateAadharNumber(String aadharNumber){
+        Pattern aadharPattern = Pattern.compile("\\d{12}");
+        boolean isValidAadhar = aadharPattern.matcher(aadharNumber).matches();
+        if(isValidAadhar){
+            isValidAadhar = VerhoeffAlgorithm.validateVerhoeff(aadharNumber);
+        }
+        return isValidAadhar;
     }
 }

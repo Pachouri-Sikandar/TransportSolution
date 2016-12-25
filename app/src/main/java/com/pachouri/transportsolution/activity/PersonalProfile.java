@@ -79,9 +79,9 @@ public class PersonalProfile extends BaseActivity {
             userModel.setMobileNumber(mobilePhone);
             userModel.save();
 
-            finish();
             Intent intent = new Intent(PersonalProfile.this,AadharVerification.class);
             startActivity(intent);
+            finish();
         }
     }
 
