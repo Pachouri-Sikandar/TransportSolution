@@ -9,15 +9,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.activeandroid.query.Select;
 import com.pachouri.transportsolution.R;
 import com.pachouri.transportsolution.activity.HomeActivity;
 import com.pachouri.transportsolution.interfaces.FragmentCommunicator;
-import com.pachouri.transportsolution.models.HistoryModel;
 import com.pachouri.transportsolution.models.UserModel;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.squareup.picasso.Picasso;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -42,9 +38,8 @@ public class MyProfileFragment extends Fragment {
     protected TextView textViewAadhar;
     @Bind(R.id.textViewVehicleRC)
     protected TextView textViewVehicleRC;
-
-    private List<UserModel> myProfileDetails = new ArrayList<>();
     private Context attachContext;
+
     public MyProfileFragment() {
     }
 
@@ -77,23 +72,24 @@ public class MyProfileFragment extends Fragment {
         }
     }
 
-    private void setProfileDetails(){
-        myProfileDetails = getUserDetails();
-        if (myProfileDetails != null){
-            if (myProfileDetails.size() > 0){
-                textViewEmail.setText(myProfileDetails.get(0).getEmail());
-                textViewPhoneNumber.setText(myProfileDetails.get(0).getMobileNumber());
-                textViewFirstName.setText(myProfileDetails.get(0).getFirstName());
-                textViewLastName.setText(myProfileDetails.get(0).getLastName());
-
+    private void setProfileDetails() {
+        UserModel userModel = getUserDetails();
+        if (userModel != null) {
+            textViewEmail.setText(userModel.getEmail());
+            textViewPhoneNumber.setText(userModel.getMobileNumber());
+            textViewFirstName.setText(userModel.getFirstName());
+            textViewLastName.setText(userModel.getLastName());
+            Picasso.with(attachContext).load(userModel.getImageUrl());
+            textViewAadhar.setText(userModel.getAadharNumber());
+            if (userModel.getVeichle() != null) {
+                textViewVehicleRC.setText(userModel.getVeichle());
             }
         }
     }
 
-    private static List<UserModel> getUserDetails() {
-        return new Select()
-                .from(HistoryModel.class)
-                .execute();
+    private UserModel getUserDetails() {
+        UserModel userModel = UserModel.getInstance(attachContext);
+        return userModel;
     }
 
     @Override

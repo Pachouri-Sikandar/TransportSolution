@@ -8,7 +8,6 @@ import com.activeandroid.annotation.Column;
 import com.activeandroid.annotation.Table;
 import com.activeandroid.query.Select;
 import com.google.gson.Gson;
-import com.pachouri.transportsolution.BaseActivity;
 import com.pachouri.transportsolution.BaseApplication;
 import com.pachouri.transportsolution.Constants;
 
@@ -24,13 +23,15 @@ import java.io.Serializable;
 
 @Table(name = UserModel.TABLE_NAME)
 public class UserModel extends Model implements Serializable {
-    public static final String TABLE_NAME="user_model";
+    public static final String TABLE_NAME = "user_model";
 
-    private static final String COLUMN_FIRST_NAME="first_name";
-    public static final String COLUMN_LAST_NAME="last_name";
-    public static final String COLUMN_EMAIL="email";
-    public static final String COLUMN_PHONE_NUMBER="phone_number";
-    public static final String COLUMN_VR="";
+    private static final String COLUMN_FIRST_NAME = "first_name";
+    public static final String COLUMN_LAST_NAME = "last_name";
+    public static final String COLUMN_EMAIL = "email";
+    public static final String COLUMN_PHONE_NUMBER = "phone_number";
+    public static final String COLUMN_VR = "";
+    public static final String IMAGE_URL = "image_url";
+    public static final String AADHAR_NUM = "aadhar";
 
     @Column(name = COLUMN_PHONE_NUMBER)
     private String mobileNumber;
@@ -47,25 +48,25 @@ public class UserModel extends Model implements Serializable {
     @Column(name = COLUMN_VR)
     private String veichle;
 
-    @Column(name = "image_url")
+    @Column(name = IMAGE_URL)
     private String ImageUrl;
 
-    @Column(name = "aadhar")
+    @Column(name = AADHAR_NUM)
     private String aadharNumber;
 
-    public static boolean isUserAlreadyRegistered(String phoneNumber){
-        UserModel userModel = new Select().from(UserModel.class).where(COLUMN_PHONE_NUMBER+" = ?",phoneNumber).executeSingle();
+    public static boolean isUserAlreadyRegistered(String phoneNumber) {
+        UserModel userModel = new Select().from(UserModel.class).where(COLUMN_PHONE_NUMBER + " = ?", phoneNumber).executeSingle();
 
-        if(userModel!=null)
+        if (userModel != null)
             return true;
         else
             return false;
     }
 
-    public static UserModel getUserModelFromMobile(String mobileNumber){
+    public static UserModel getUserModelFromMobile(String mobileNumber) {
         return new Select()
                 .from(UserModel.class)
-                .where(COLUMN_PHONE_NUMBER+" = ?",mobileNumber)
+                .where(COLUMN_PHONE_NUMBER + " = ?", mobileNumber)
                 .executeSingle();
     }
 
