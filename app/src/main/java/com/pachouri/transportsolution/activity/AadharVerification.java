@@ -54,6 +54,8 @@ public class AadharVerification extends AppCompatActivity {
             userModel.setAadharNumber(aadhar);
             UserModel.setUpInstance(getApplicationContext(),userModel);
 
+            UserLifecycleModel.setUserCurrentState(getApplicationContext(), UserLifecycleModel.UserStatus.LoggedIn);
+
             Intent intent = new Intent(AadharVerification.this,HomeActivity.class);
             startActivity(intent);
             finish();
