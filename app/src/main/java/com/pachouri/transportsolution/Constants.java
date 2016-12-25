@@ -9,4 +9,5 @@ import com.pachouri.transportsolution.widgets.FontHelper;
 public class Constants {
     public static final int APP_FONTS = FontHelper.FONT_OPENSANS;
     public static final String PREF_KEY_PHONE_NUMBER="phone_number";
+    public static final String PREF_KEY_USER = "user_key";
 }

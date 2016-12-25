@@ -17,20 +17,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
-
-            <include
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                layout="@layout/user_components"
-                />
-
-
-        </RelativeLayout>
-
         <com.pachouri.transportsolution.widgets.AppButton
             android:id="@+id/btn_save"
             android:layout_width="match_parent"
@@ -42,6 +28,38 @@
             android:background="@drawable/selector_gray_white"
             />
 
+        <ScrollView
+            android:layout_above="@id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:paddingTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_user_profile"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/default_user_icon"
+                    android:layout_marginBottom="30dp"
+                    android:layout_gravity="center_horizontal" />
+
+                <include
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/user_components"
+                    />
+
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
 
 
     </RelativeLayout>

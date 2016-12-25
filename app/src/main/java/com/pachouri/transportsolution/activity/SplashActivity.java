@@ -21,6 +21,8 @@ import com.facebook.accountkit.ui.LoginType;
 import com.pachouri.transportsolution.BaseActivity;
 import com.pachouri.transportsolution.Constants;
 import com.pachouri.transportsolution.R;
+import com.pachouri.transportsolution.models.UserLifecycleModel;
+import com.pachouri.transportsolution.models.UserModel;
 import com.pachouri.transportsolution.models.HistoryModel;
 import com.pachouri.transportsolution.models.ReceiverDetailsModel;
 import com.pachouri.transportsolution.util.CommonUtil;
@@ -74,25 +76,62 @@ public class SplashActivity extends BaseActivity {
         rlContainer.postDelayed(new Runnable() {
             @Override
             public void run() {
-                CommonUtil.animateViewColor(rlContainer, CommonUtil.BACKGROUND, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary), android.R.color.white, BACKGROUND_ANIMATION_DURATION);
-                CommonUtil.animateViewColor(txtTitle, CommonUtil.TEXT_COLOR, android.R.color.white, ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary), BACKGROUND_ANIMATION_DURATION);
-                txtTitle.animate().translationY(0).setInterpolator(interpolation).setDuration(800);
-                appButton.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        appButton.animate().alpha(1).setInterpolator(interpolation).setDuration(700);
-                        loginContent.animate().alpha(1).translationY(0).setInterpolator(interpolation).setDuration(700);
-                        txtContent.animate().alpha(1).translationY(0).setInterpolator(interpolation).setDuration(700);
-                    }
-                }, 300);
+
+                UserLifecycleModel.UserStatus userLifecycleModel = UserLifecycleModel.getUserCurrentState(getApplicationContext());
+                if(userLifecycleModel == UserLifecycleModel.UserStatus.LoggedIn)
+                    openHomeScreen();
+                else if(userLifecycleModel == UserLifecycleModel.UserStatus.AdharRegistrationNotComplete){
+                    finish();
+                    Intent intent = new Intent(SplashActivity.this,AadharVerification.class);
+                    startActivity(intent);
+                }
+                else if(userLifecycleModel == UserLifecycleModel.UserStatus.NotLoggedIn) {
+
+                    CommonUtil.animateViewColor(rlContainer,CommonUtil.BACKGROUND, ContextCompat.getColor(getApplicationContext(),R.color.colorPrimary),android.R.color.white,BACKGROUND_ANIMATION_DURATION);
+                    CommonUtil.animateViewColor(txtTitle,CommonUtil.TEXT_COLOR,android.R.color.white,ContextCompat.getColor(getApplicationContext(),R.color.colorPrimary),BACKGROUND_ANIMATION_DURATION);
+                    txtTitle.animate().translationY(0).setInterpolator(interpolation).setDuration(800);
+                    appButton.postDelayed(new Runnable() {
+                        @Override
+                        public void run(){
+                            appButton.animate().alpha(1).setInterpolator(interpolation).setDuration(700);
+                            loginContent.animate().alpha(1).translationY(0).setInterpolator(interpolation).setDuration(700);
+                            txtContent.animate().alpha(1).translationY(0).setInterpolator(interpolation).setDuration(700);
+                        }
+                    },300);
+
+                }else if(userLifecycleModel == UserLifecycleModel.UserStatus.PersonalProfileNotComplete){
+                    UserModel userModel = UserModel.getInstance(getApplicationContext());
+                    redirectToHomeActivity(userModel.getMobileNumber());
+                }
+
             }
         }, INITIAL_DELAY);
     }
 
+    private void openHomeScreen(){
+        finish();
+        Intent intent = new Intent(this,HomeActivity.class);
+        startActivity(intent);
+    }
+
     @OnClick(R.id.btn_login)
     protected void onClickLogin() {
-//        initiateAccountKitLogin();
-        openHome();
+        List<ReceiverDetailsModel> list = getReceivers();
+        if (list != null) {
+            if (list.size() == 0) {
+                saveSomeReceivers();
+            }
+        }
+
+        List<HistoryModel> historyList = getHistory();
+        if (historyList != null){
+            if (list.size() == 0){
+                saveSomeHistories();
+            }
+        }
+
+        initiateAccountKitLogin();
+//        openHome();
     }
 
     private void initViews() {
@@ -113,8 +152,9 @@ public class SplashActivity extends BaseActivity {
 
     private void redirectToHomeActivity(String phoneNumber) {
         finish();
-        Intent intent = new Intent(this, HomeActivity.class);
-        intent.putExtra(Constants.PREF_KEY_PHONE_NUMBER, phoneNumber);
+        Intent intent = new Intent(this, PersonalProfile.class);
+        intent.putExtra(Constants.PREF_KEY_PHONE_NUMBER,phoneNumber);
+
         startActivity(intent);
         finish();
     }
@@ -138,19 +178,7 @@ public class SplashActivity extends BaseActivity {
     }
 
     private void openHome() {
-        List<ReceiverDetailsModel> list = getReceivers();
-        if (list != null) {
-            if (list.size() == 0) {
-                saveSomeReceivers();
-            }
-        }
 
-        List<HistoryModel> historyList = getHistory();
-        if (historyList != null){
-            if (list.size() == 0){
-                saveSomeHistories();
-            }
-        }
 
         Intent open = new Intent(this, HomeActivity.class);
         startActivity(open);
@@ -165,7 +193,17 @@ public class SplashActivity extends BaseActivity {
                 public void onSuccess(com.facebook.accountkit.Account account) {
                     PhoneNumber phoneNumber = account.getPhoneNumber();
                     if (phoneNumber != null) {
-                        redirectToHomeActivity(phoneNumber.getPhoneNumber());
+
+                        UserModel userModel = new UserModel();
+                        userModel.setMobileNumber(phoneNumber.getPhoneNumber());
+                        UserModel.setUpInstance(getApplicationContext(),userModel);
+
+                        if(UserModel.isUserAlreadyRegistered(phoneNumber.getPhoneNumber())){
+                            openHomeScreen();
+                        }
+                        else
+                            redirectToHomeActivity(phoneNumber.getPhoneNumber());
+
                     } else {
                         MessageUtils.showToast(getApplicationContext(), "Error #SSA01");
                     }
