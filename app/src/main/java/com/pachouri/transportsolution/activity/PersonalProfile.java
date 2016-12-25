@@ -69,8 +69,10 @@ public class PersonalProfile extends BaseActivity {
     @OnClick(R.id.btn_save)
     protected void onClickSave(){
         if(editTextFirstName.getText().toString().isEmpty())
-            MessageUtils.showToast(getApplicationContext(),"Invalid name");
-        else if(!editTextEmail.getText().toString().isEmpty()&&!CommonUtil.isValidEmail(editTextEmail.getText()))
+            MessageUtils.showToast(getApplicationContext(),"First name is namditory");
+        else if(!editTextEmail.getText().toString().isEmpty())
+            MessageUtils.showToast(getApplicationContext(),"Email is mandatory");
+        else if(!CommonUtil.isValidEmail(editTextEmail.getText()))
             MessageUtils.showToast(getApplicationContext(),"Invalid email");
         else{
             UserModel userModel = UserModel.getInstance(getApplicationContext());

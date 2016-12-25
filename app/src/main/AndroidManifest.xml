@@ -71,6 +71,7 @@
             android:screenOrientation="portrait" />
 
         <activity android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
             android:name=".activity.PersonalProfile" />
         <activity android:name=".activity.AadharVerification"></activity>
 

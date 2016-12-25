@@ -17,13 +17,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <com.pachouri.transportsolution.widgets.AppButton
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@drawable/text_color_black_white"
+            android:text="Save"
+            android:layout_alignParentBottom="true"
+            android:textSize="14sp"
+            android:background="@drawable/selector_gray_white"
+            />
+
         <ScrollView
+            android:layout_above="@id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true">
 
             <LinearLayout
                 android:orientation="vertical"
+                android:paddingTop="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -47,18 +60,6 @@
 
 
         </ScrollView>
-
-        <com.pachouri.transportsolution.widgets.AppButton
-            android:id="@+id/btn_save"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:textColor="@drawable/text_color_black_white"
-            android:text="Save"
-            android:layout_alignParentBottom="true"
-            android:textSize="14sp"
-            android:background="@drawable/selector_gray_white"
-            />
-
 
 
     </RelativeLayout>
